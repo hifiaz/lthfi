@@ -33,7 +33,7 @@ jobs:
         with:
           # Replace the following with the local repository path
           # to your Static Shock build directory.
-          path: ./packages/static_shock_docs/build
+          path: ./build
 
   deploy:
     name: Deploy

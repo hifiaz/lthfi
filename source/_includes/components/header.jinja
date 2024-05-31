@@ -1,0 +1,23 @@
+<section class="navigation">
+    <div class="container">
+        {% if navigation != null %}
+        <nav>
+            {% for item in navigation.items %}
+            <div class="nav-item-outer" key={{item.url}}>
+                <a href={{item.url}} key={{item.title}} activeclass="active" class="item">
+                    <img src={{item.icon}} alt={{item.title}} class="nav-image" />
+                    <span>{{item.title}}</span>
+                </a>
+            </div>
+            {% endfor %}
+        </nav>
+        {% endif %}
+        <div class="theme-toggle">
+            <button>
+                <a href="https://github.com/hifiaz" target="_blank">
+                    <img src="/images/nav-github.png" alt="Github" />
+                </a>
+            </button>
+        </div>
+    </div>
+</section>

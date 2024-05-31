@@ -1,0 +1,127 @@
+---
+date: 2020-05-31
+title: "X Pak Bos"
+template: post
+thumbnail: "../thumbnails/flutter.jpg"
+slug: x-pak-box
+categories:
+  - Curhat
+tags:
+  - blog
+  - container
+---
+
+[![Deno Configuration](https://img.youtube.com/vi/FzjQHu_Cp9E/0.jpg)](https://www.youtube.com/watch?v=FzjQHu_Cp9E)
+
+Hello everyone, iam fiaz luthfi and now you are on devindo youtube channel. You know flutter has container but many of us, don't know what can we do more about countainer. So we talk about this cointainer in deep 
+
+This is basic flutter project, you can be done to create this by do ‘flutter create name_project in your command line.
+
+And this is basic of container, and i set have child text devindo
+```bash
+Container(
+    child: Text('Devindo')
+)
+```
+
+First one we talk about color in container, inside container you can set color basic
+```bash
+color: Colors.blue
+// also you can change color opacity by do
+color: Colors:blue[500] // the code you can see when hover
+// of if you want to use theme color you can do
+color: Theme.of(context).accentColor
+// but if you have your code color you can covert it to hex and do like this to implement
+color: Color(0xff303960) // dark blue
+```
+next we talk about padding and margin, if you don't know, margin is empty space to surround child.
+padding is empty space to inscribe child. to clearly, i try to make it
+
+i create another one container and i set collor as green
+first container i set padding for all is 50.0, before continue, we will talk more about EdgeInsets,
+
+in this widget you have many option to set it, first .all is space all around this widget. but if you only set top only, or bottom, or left or right, you can do .only in this option has 4 option to set space. .nex is .symetric is option to create space horizontal or vertical, last is .fromWindowPadding is to create paddy and set pixel ratio as widget, exampe i have padding 50 and pixel ratio is 1.1, actualy edgeinserts have option lerp, but it not be use in basic, this option can be use if we create something like animation. Want to explore about animation? please give a comment
+
+next we talk about margin, berofe padding will make space inside, margin is the opposite, when we set padding, this option will make space inside this box, so if you want set space ouside just implement margin.
+
+alignment, this option will make child inside container move as you want, example choose postition bottomRight or another you can see this list. but this we not see the effect you can comment for padding to see how alignment is work 
+
+height and width this option will make size of container, you can set with double value, example hight 30, and width 100, or make it relative wih MediaQuery.of(). and set as you want. 
+
+clipBehavour this option will make your widget looks good example if you draw triangle, clipbeavhour will take effect of peformance, for detail you can read this article by [raouf rahicle](https://medium.com/flutter-community/clipping-in-flutter-e9eaa6b1721a)
+
+constraints, this option it to make default size of your child widget, we not talk detail about this, cause this option has many option. example you can set BoxConstain with minimum hight is 100.0. but easily this option will work if you not set exacly number for hight or widhth befor, exampe i will comment for hight and set max hight is 300.0
+
+next is decoration also for this option has many option for exampe i want to set his container have line line border with red color, so you can set boxdecoration and border.all( colors: Colors.black, witdh:8), this will became error because we have set color ouside box, so this color must inside here. in this option also you can set for border radius, or set image as backround, gradient, background blendmode to blend color of this decoration, also you can set shape.
+
+last we talk about transfrom, this option is to apply matrix before paint container. example i want rotate this container in z direction so you can do Matrix4.rotationZ(0.1)
+
+
+
+
+
+
+
+
+first one in this video i will tell you how to create enviroment configuration, so this video will be short.
+
+to easily manage project, i create stucture like this.
+
+```bash
+handlers
+// handlers contains route handlers
+middlewares
+// middlewares provide functions that run on every request
+models
+// models contain model definitions
+services
+// services contains... services
+config.ts
+// config.ts contains global application configuration, yes in this video we talk about this.
+index.ts
+// before is server.ts, this is a entry point of the application
+routing.ts
+// routing.ts contains API routes
+```
+
+before, we have create resource.ts it will be rename in next video, and this grouping to models, now just move this recource model to look clean,
+
+this become read error, just fix it by define new route in index.ts
+
+we will go to config.ts, before we have define, port and default host is localhost.
+
+in node you know like env, yes same in deno, i will make env in config.ts
+
+```bash
+const env = Deno.env.toObject();
+export const APP_HOST = env.APP_HOST || "127.0.0.1";
+export const APP_PORT = env.APP_PORT || 3000;
+// next i define for db path, in basic i just want write db to local json
+export const DB_PATH = env.DB_PATH || "./db/bahasa.json"
+```
+go back to index.ts
+
+```bash
+import {APP_HOST, APP_PORT} from "./config.ts"
+
+// you can change app listen to
+app.listen(`${APP_HOST}:${APP_PORT})
+``` 
+
+lets test this project. before i create example with drun, you can upgrade drun
+
+```bash
+deno install --allow-read --allow-run --unstable -f https://deno.land/x/drun@v1.1.0/drun.ts
+```
+
+if you have install drun before use -f to rewrite
+
+to easily run this project, i create drun.json like example, just copy, and add --allow-env couse we use env
+
+just run by type drun, and lets see how its work.
+
+that it about enviroment configuration, next we will learn about routing and model
+
+i hope you enjoy with this video, and please give me comment. Don't forget to subscribe.
+
+Thanks

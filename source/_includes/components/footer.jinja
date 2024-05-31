@@ -1,0 +1,14 @@
+<footer class="footer">
+    <section>
+        <span>
+            <img src="/images/logo.svg" class="logo" alt="Luthfi" />
+        </span>
+        <nav>
+            {% for link in footers.items %}
+            <a href={{link.url}} title={{link.title}} target="_blank" rel="noopener noreferrer" key={{link.url}}>
+                <span>{{link.title}}</span>
+            </a>
+            {% endfor %}
+        </nav>
+    </section>
+</footer>

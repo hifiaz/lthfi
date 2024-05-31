@@ -7,12 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        # If your website isn't at the root of your repository, then
-        # specify your website directory as your working directory for
-        # this job. Otherwise, you don't need any "defaults".
-        working-directory: ./packages/static_shock_docs
+    # defaults:
+    #   run:
+    #     # If your website isn't at the root of your repository, then
+    #     # specify your website directory as your working directory for
+    #     # this job. Otherwise, you don't need any "defaults".
+    #     working-directory: ./packages/static_shock_docs
     steps:
       # Checkout the repository
       - uses: actions/checkout@v3

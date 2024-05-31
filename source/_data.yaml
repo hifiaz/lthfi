@@ -5,20 +5,20 @@
 navigation:
   items:
     - title: Home
-      url: /
-      icon: /images/nav-floppy.png
+      url: 
+      icon: images/nav-floppy.png
 
     - title: "About"
-      url: /about
-      icon: /images/nav-search.png
+      url: about
+      icon: images/nav-search.png
 
     - title: Blog
-      url: /blog
-      icon: /images/nav-blog.png
+      url: blog
+      icon: images/nav-blog.png
     
     - title: Project
-      url: /project
-      icon: /images/nav-projects.png
+      url: project
+      icon: images/nav-projects.png
 
 tag: blog
 sortBy: date
@@ -26,7 +26,7 @@ sortBy: date
 footers:
   items:
     - title: Privacy Policy
-      url: /pp
+      url: pp
 
     - title: Term & Conditions
-      url: /tnc
+      url: tnc

@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 slug: pp
+layout: layouts/generalpage.jinja
 template: page
 ---
 

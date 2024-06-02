@@ -50,69 +50,46 @@
           </a>
         </h2>
         <div class="posts newspaper">
-          {% for page in pages.byTag(tag, sortBy=date) %}
-            {% if loop.index <= 5 %} 
-            <a href="/{{ page.data.url }}" class="post">
-              <h3>{{ page.data.title }}</h3>
-              <time>{{ page.data.date }}</time>
+          {% for page in pages.byTag("blog", sortBy="date") | reverse %}
+          {% if loop.index <= 5 %} <a href="/{{ page.data.url }}" class="post">
+            <h3>{{ page.data.title }}</h3>
+            <time>{{ page.data.date }}</time>
             </a>
             {% endif %}
-          {% endfor %}
-        </div>
-      </section>
-
-      {# <section class="segment large">
-        <Heading title="Highlights" />
-
-        <div class="highlight-preview">
-          {simplifiedHighlights.map((post) => {
-          return (
-          <div class="muted card flex" key={`popular-${post.slug}`}>
-            {post.thumbnail && <Img fixed={post.thumbnail} />}
-            <div>
-              <time>{post.date}</time>
-              <Link class="card-header" to={post.slug}>
-              {post.title}
-              </Link>
-            </div>
-          </div>
-          )
-          })}
+            {% endfor %}
         </div>
       </section>
 
       <section class="segment large">
-        <Heading title="Projects" slug="/projects" />
+        <h2 class="home-heading">
+          <div>
+            <div class="title">Projects</div>
+          </div>
+          <a class="button" href="projects">
+            View all
+          </a>
+        </h2>
 
         <div class="post-preview">
-          {projectsList
-          .filter((project) => project.highlight)
-          .map((project) => {
-          return (
-          <div class="anchored card" key={project.slug}>
+          {% for page in pages.byTag("project", sortBy="date") | reverse %}
+          {% if loop.index <= 5 %} <div class="anchored card" key={page.data.title}>
             <div>
-              <time>{project.date}</time>
-              <a class="card-header" href={`https://github.com/taniarascia/${project.slug}`} target="_blank"
-                rel="noreferrer">
-                {project.name}
+              <time>{{page.data.date}}</time>
+              <a class="card-header" href={{page.data.source}} target="_blank" rel="noreferrer">
+                {{page.data.title}}
               </a>
-              <p>{project.tagline}</p>
+              <p>{{page.data.tagline}}</p>
             </div>
             <div class="anchored links">
-              {project.writeup && (
-              <Link class="button" to={project.writeup}>
-              Article
-              </Link>
-              )}
-              <a class="button flex" href={project.url} target="_blank" rel="noreferrer">
-                Demo
+              <a class="button flex" href={{page.data.source}} target="_blank" rel="noreferrer">
+                Source
               </a>
             </div>
-          </div>
-          )
-          })}
         </div>
-      </section> #}
+        {% endif %}
+        {% endfor %}
+    </div>
+    </section>
     </div>
 
   </main>

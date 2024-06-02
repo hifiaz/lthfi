@@ -1,8 +1,6 @@
 ---
 title: Project
 description: All My Project
-layout: layouts/generalpage.jinja
+layout: layouts/projectpage.jinja
 ---
 # Project
-
-Under Development

@@ -20,13 +20,10 @@ navigation:
       url: /project
       icon: images/nav-projects.png
 
-tag: blog
-sortBy: date
-
 footers:
   items:
     - title: Privacy Policy
-      url: pp
+      url: /pp
 
     - title: Term & Conditions
-      url: tnc
+      url: /tnc

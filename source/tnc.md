@@ -1,6 +1,7 @@
 ---
 title: Terms and Conditions
 slug: tnc
+layout: layouts/generalpage.jinja
 template: page
 ---
 

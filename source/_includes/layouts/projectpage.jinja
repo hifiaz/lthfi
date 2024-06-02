@@ -26,12 +26,22 @@
     <main>
         <div class="container">
             {{ content }}
-            <div class="posts">
-                {% for page in pages.byTag("blog", sortBy="date") | reverse %}
-                <a href="/{{ page.data.url }}" class="post">
-                    <h3>{{ page.data.title }}</h3>
-                    <time>{{ page.data.date }}</time>
-                </a>
+            <div class="project-preview">
+                {% for page in pages.byTag("project") %}
+                <div class="card anchored large" key={{page.data.title}}>
+                    <div>
+                        <time>{{page.data.date}}</time>
+                        <a class="card-header" href={{page.data.source}} target="_blank" rel="noreferrer">
+                            {{page.data.title}}
+                        </a>
+                        <p>{{page.data.tagline}}</p>
+                    </div>
+                    <div class="links anchored">
+                        <a class="button small flex" href={{page.data.source}} target="_blank" rel="noreferrer">
+                            Source
+                        </a>
+                    </div>
+                </div>
                 {% endfor %}
             </div>
         </div>

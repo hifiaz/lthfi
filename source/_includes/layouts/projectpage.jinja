@@ -27,7 +27,7 @@
         <div class="container">
             {{ content }}
             <div class="project-preview">
-                {% for page in pages.byTag("project") %}
+                {% for page in pages.byTag("project", sortBy="date") | reverse %}
                 <div class="card anchored large" key={{page.data.title}}>
                     <div>
                         <time>{{page.data.date}}</time>

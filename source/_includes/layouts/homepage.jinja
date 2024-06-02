@@ -72,7 +72,7 @@
 
         <div class="post-preview">
           {% for page in pages.byTag("project", sortBy="date") | reverse %}
-          {% if loop.index <= 5 %} <div class="anchored card" key={page.data.title}>
+          {% if loop.index <= 6 %} <div class="anchored card" key={page.data.title}>
             <div>
               <time>{{page.data.date}}</time>
               <a class="card-header" href={{page.data.source}} target="_blank" rel="noreferrer">
